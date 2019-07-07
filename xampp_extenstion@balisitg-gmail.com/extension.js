@@ -7,7 +7,7 @@ const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 const Lang = imports.lang;
 
-
+let _indicator;
 
 function _runXampp() {
         Util.spawn(['/bin/bash', '-c', "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /opt/lampp/manager-linux-x64.run"])
@@ -43,7 +43,7 @@ function init() {
 }
 
 function enable() {
-    let _indicator =  new Xampp_Indicator();
+    _indicator =  new Xampp_Indicator();
      Main.panel._addToPanelBox('Xampp', _indicator, 1, Main.panel._rightBox);
 }
 
